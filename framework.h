@@ -12,4 +12,8 @@
 using namespace std;
 using namespace SDK;
 
+#include "Memory.h"
 #include "Logging.h"
+
+#include "Globals.h"
+#include "GameMode.h"

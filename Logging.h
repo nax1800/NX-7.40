@@ -31,21 +31,21 @@ namespace Logging
 	string LogTypeToString(ELogType LogType = ELogType::Invalid)
 	{
 		if (LogType == ELogType::Abilities)
-			return "Abilities";
+			return "LogAbilities";
 		else if (LogType == ELogType::Actor)
-			return "Actor";
+			return "LogActor";
 		else if (LogType == ELogType::Player)
-			return "Player";
+			return "LogPlayer";
 		else if (LogType == ELogType::Game)
-			return "Game";
+			return "LogGame";
 		else if (LogType == ELogType::Inventory)
-			return "Inventory";
+			return "LogInventory";
 		else if (LogType == ELogType::Kismet)
-			return "Kismet";
+			return "LogKismet";
 		else if (LogType == ELogType::Hook)
-			return "Hook";
+			return "LogHook";
 		else if (LogType == ELogType::NX)
-			return "NX";
+			return "LogNX";
 
 		return "Unknown";
 	}
@@ -64,10 +64,10 @@ namespace Logging
 
 	void Log(ELogEvent LogEvent, ELogType LogType, const char* yh, ...)
 	{
-		std::string Prefix = "[" + LogEventToString(LogEvent) + ":" + LogTypeToString(LogType) + "] ";
+		std::string Prefix = "" + LogTypeToString(LogType) + ":" + LogEventToString(LogEvent) + ": ";
 		va_list _ArgList;
 		va_start(_ArgList, yh);
-		std::string FullFormat = Prefix + yh;
+		std::string FullFormat = Prefix + yh + "\n";
 		vfprintf(stdout, FullFormat.c_str(), _ArgList);
 		va_end(_ArgList);
 	}

@@ -142,7 +142,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="framework.h" />
+    <ClInclude Include="GameMode.h" />
+    <ClInclude Include="Globals.h" />
     <ClInclude Include="Logging.h" />
+    <ClInclude Include="Memory.h" />
     <ClInclude Include="MinHook\include\MinHook.h" />
     <ClInclude Include="SDK.hpp" />
   </ItemGroup>
